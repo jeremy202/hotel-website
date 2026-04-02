@@ -9,4 +9,14 @@ const verifyPaymentValidator = [
   body("reference").trim().notEmpty().withMessage("Payment reference is required"),
 ];
 
-module.exports = { initializePaymentValidator, verifyPaymentValidator };
+const verifyPaymentBodyValidator = verifyPaymentValidator;
+const verifyPaymentParamValidator = [
+  param("reference").trim().notEmpty().withMessage("Payment reference is required"),
+];
+
+module.exports = {
+  initializePaymentValidator,
+  verifyPaymentValidator,
+  verifyPaymentBodyValidator,
+  verifyPaymentParamValidator,
+};

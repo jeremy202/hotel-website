@@ -2,7 +2,11 @@ const { Router } = require("express");
 const paymentController = require("../controllers/paymentController");
 const auth = require("../middleware/auth");
 const validateRequest = require("../middleware/validateRequest");
-const { initializePaymentValidator, verifyPaymentValidator } = require("../validators/paymentValidators");
+const {
+  initializePaymentValidator,
+  verifyPaymentBodyValidator,
+  verifyPaymentParamValidator,
+} = require("../validators/paymentValidators");
 
 const router = Router();
 
@@ -14,7 +18,7 @@ router.post(
   paymentController.initializePayment,
 );
 
-router.post("/verify", verifyPaymentValidator, validateRequest, paymentController.verifyPayment);
-router.get("/verify/:reference", verifyPaymentValidator, validateRequest, paymentController.verifyPayment);
+router.post("/verify", verifyPaymentBodyValidator, validateRequest, paymentController.verifyPayment);
+router.get("/verify/:reference", verifyPaymentParamValidator, validateRequest, paymentController.verifyPayment);
 
 module.exports = router;

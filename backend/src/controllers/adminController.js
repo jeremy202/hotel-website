@@ -48,10 +48,10 @@ const exportBookingsCsv = asyncHandler(async (_req, res) => {
 });
 
 module.exports = {
-  getAnalytics: getDashboardAnalytics,
-  listBookings: getAllBookings,
-  listTransactions: getAllTransactions,
-  getCalendar: getAvailabilityCalendar,
+  getDashboardAnalytics,
+  getAllBookings,
+  getAllTransactions,
+  getAvailabilityCalendar,
   createManualBooking,
   exportBookingsCsv,
 };

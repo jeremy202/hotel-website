@@ -6,10 +6,10 @@ const router = express.Router();
 
 router.use(auth.authenticate, auth.authorize("admin"));
 
-router.get("/analytics", adminController.getAnalytics);
-router.get("/bookings", adminController.listBookings);
-router.get("/transactions", adminController.listTransactions);
-router.get("/calendar", adminController.getCalendar);
+router.get("/analytics", adminController.getDashboardAnalytics);
+router.get("/bookings", adminController.getAllBookings);
+router.get("/transactions", adminController.getAllTransactions);
+router.get("/calendar", adminController.getAvailabilityCalendar);
 router.post("/bookings/manual", adminController.createManualBooking);
 router.get("/bookings/export", adminController.exportBookingsCsv);
 
