@@ -1,5 +1,6 @@
 <template>
   <div id="app-root">
+    <PageLoader />
     <AppNavbar />
     <main>
       <RouterView v-slot="{ Component }">
@@ -15,6 +16,7 @@
 <script setup>
 import AppNavbar from '@/components/AppNavbar.vue'
 import AppFooter from '@/components/AppFooter.vue'
+import PageLoader from '@/components/PageLoader.vue'
 </script>
 
 <style>
